@@ -4,10 +4,10 @@ This is a small program that will make it easier to execute the command necessar
 # Why you made this?
 I made this to work together with my Greasy Fork script: [Dead Frontier at work](https://greasyfork.org/en/scripts/468944-dead-frontier-at-work)
 
-This program provides a simple interface for the user to save the deadfrontier.exe path and to put his/her authenticator token to login into the Inner City.
+This program provides a simple interface for the user to save the deadfrontier.exe path and to put his/her authentication token to login into the Inner City.
 
 # How does it works?
-Put the Executable Path and your Authenticator Token in the desired input fields like in the image below:
+Put the Executable Path and your Authentication Token in the desired input fields like in the image below:
 
 ![DF3Datwork](https://i.imgur.com/f9KeG8h.png)
 

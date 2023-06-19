@@ -9,7 +9,7 @@ This program provides a simple interface for the user to save the deadfrontier.e
 # How does it works?
 Put the Executable Path and your Authenticator Token in the desired input fields like in the image below:
 
-![DF3Datwork](https://i.imgur.com/EuXciDr.png)
+![DF3Datwork](https://i.imgur.com/f9KeG8h.png)
 
 Then you press the "Login" button, wait for the Standalone Client to open, and then once it open, press the "Play!" button and wait for the server to authenticate you into the Inner City.
 

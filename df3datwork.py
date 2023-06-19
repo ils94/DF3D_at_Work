@@ -28,13 +28,15 @@ def execute_command():
         save_values()
         executable_path = path_entry.get().strip('\"')  # Remove quotes from executable path
         authenticator_token = token_entry.get().strip('\"')  # Remove quotes from token
-        command = f'"{executable_path}" "{authenticator_token}"'
-        subprocess.call(command, shell=True)
+        command = [executable_path, authenticator_token]
+        subprocess.Popen(command)  # Launch the subprocess program
+        window.destroy()  # Close the Python program
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred:\n\n{str(e)}")
 
 def execute_command_thread():
     thread = threading.Thread(target=execute_command)
+    thread.setDaemon(True)
     thread.start()
 
 # Create the main window
@@ -48,8 +50,8 @@ if os.path.exists(icon_file):
     window.iconbitmap(icon_file)
 
 # Calculate window position at the center of the screen
-window_width = 350
-window_height = 150
+window_width = 300
+window_height = 140
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
 x = (screen_width - window_width) // 2
@@ -71,7 +73,7 @@ token_entry.pack(fill=X, padx=5, pady=5)
 load_values()
 
 # Create the execute button
-execute_button = tk.Button(window, text="Login", command=execute_command_thread)
+execute_button = tk.Button(window, text="Login", width=10, command=execute_command_thread)
 execute_button.pack(side=LEFT, padx=5, pady=5)
 
 # Run the application

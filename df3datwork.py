@@ -1,5 +1,6 @@
 import tkinter as tk
 import os.path
+import json
 from tkinter import X, LEFT
 import subprocess
 import threading
@@ -7,19 +8,22 @@ from tkinter import messagebox
 
 def save_values():
     executable_path = path_entry.get()
-    authenticator_token = token_entry.get()
-    with open('saved_values.txt', 'w') as file:
-        file.write(f"{executable_path}\n")
-        file.write(f"{authenticator_token}")
+    authentication_token = token_entry.get()
+    data = {
+        "executable_path": executable_path,
+        "authentication_token": authentication_token
+    }
+    with open('saved_values.json', 'w') as file:
+        json.dump(data, file)
 
 def load_values():
     try:
-        with open('saved_values.txt', 'r') as file:
-            lines = file.readlines()
-            executable_path = lines[0].strip()
-            authenticator_token = lines[1].strip()
+        with open('saved_values.json', 'r') as file:
+            data = json.load(file)
+            executable_path = data.get("executable_path", "")
+            authentication_token = data.get("authentication_token", "")
             path_entry.insert(tk.END, executable_path)
-            token_entry.insert(tk.END, authenticator_token)
+            token_entry.insert(tk.END, authentication_token)
     except FileNotFoundError:
         pass
 
@@ -27,8 +31,8 @@ def execute_command():
     try:
         save_values()
         executable_path = path_entry.get().strip('\"')  # Remove quotes from executable path
-        authenticator_token = token_entry.get().strip('\"')  # Remove quotes from token
-        command = [executable_path, authenticator_token]
+        authentication_token = token_entry.get().strip('\"')  # Remove quotes from token
+        command = [executable_path, authentication_token]
         subprocess.Popen(command)  # Launch the subprocess program
         window.destroy()  # Close the Python program
     except Exception as e:
@@ -64,7 +68,7 @@ path_label.pack()
 path_entry = tk.Entry(window)
 path_entry.pack(fill=X, padx=5, pady=5)
 
-token_label = tk.Label(window, text="Authenticator Token:")
+token_label = tk.Label(window, text="Authentication Token:")
 token_label.pack()
 token_entry = tk.Entry(window)
 token_entry.pack(fill=X, padx=5, pady=5)

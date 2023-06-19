@@ -6,7 +6,7 @@ I made this to work together with my Greasy Fork script: [Dead Frontier at work]
 
 This program provides a simple interface for the user to save the deadfrontier.exe path and to put his/her authenticator token to login into the Inner City.
 
-# How does this works?
+# How does it works?
 Put the Executable Path and your Authenticator Token in the desired input fields like in the image below:
 
 ![DF3Datwork](https://i.imgur.com/EuXciDr.png)

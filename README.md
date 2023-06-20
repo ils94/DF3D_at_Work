@@ -25,7 +25,7 @@ For reference, I use Python 3.8 32bits.
 
 # Compiling it yourself
 
-Download and install Python from https://www.python.org/downloads/
+Download and install Python from: https://www.python.org/downloads/
 
 Open your CMD and type: pip install pyinstaller
 

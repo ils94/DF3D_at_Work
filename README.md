@@ -11,6 +11,10 @@ Put the Executable Path and your Authentication Token in the desired input field
 
 ![DF3Datwork](https://i.imgur.com/f9KeG8h.png)
 
+If you do not want to type the whole path of deadfrontier.exe, you can copy all the files inside the df3datwork into the Dead Frontier folder and in the part to type the Executable Path, you just type deadfrontier.exe, like in the image below:
+
+![DF3Datwork 2](https://i.imgur.com/cumOOgn.png)
+
 Then you press the "Login" button, wait for the Standalone Client to open, and then once it open, press the "Play!" button and wait for the server to authenticate you into the Inner City.
 
 # Download

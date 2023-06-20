@@ -31,7 +31,7 @@ def execute_command():
     try:
         save_values()
         executable_path = path_entry.get().strip('\"')  # Remove quotes from executable path
-        authentication_token = token_entry.get().strip('\"')  # Remove quotes from token
+        authentication_token = token_entry.get().strip('\"').replace("\n", "")  # Remove quotes from token
         command = [executable_path, authentication_token]
         subprocess.Popen(command)  # Launch the subprocess program
         window.destroy()  # Close the Python program

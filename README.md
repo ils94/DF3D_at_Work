@@ -20,3 +20,25 @@ Then you press the "Login" button, wait for the Standalone Client to open, and t
 # Download
 
 You can download this from this [link](https://github.com/ils94/DF3D_at_Work/releases/download/release/df3datwork.zip)
+
+# Compiling it yourself
+
+Download and install Python from https://www.python.org/downloads/
+
+Open your CMD and type: pip install pyinstaller
+
+Then type: pyinstaller path/to/df3datwork.py --onedir --noconsole --icon="path/to/dficon.ico"
+
+Wait for pyinstaller to compile into a .exe, and the result should be in a folder called "dist" inside the folder where df3datwork.py is.
+
+If you do not have pip/python in your Window's Env:
+
+Open Window's CMD and type:
+
+"path/to/your/python/python.exe" "path/to/your/python/Scripts/pip.exe" install pyinstaller
+
+and wait for the installation, then type:
+
+"path/to/your/python/python.exe" "path/to/your/python/Scripts/pyinstaller.exe" path/to/df3datwork.py --onedir --noconsole --icon="path/to/dficon.ico"
+
+Wait for pyinstaller to compile into a .exe, and the result should be in a folder called "dist" inside the folder where df3datwork.py is.

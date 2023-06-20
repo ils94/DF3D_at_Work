@@ -29,7 +29,7 @@ Download and install Python from: https://www.python.org/downloads/
 
 Open your CMD and type: pip install pyinstaller
 
-Then type: pyinstaller path/to/df3datwork.py --onedir --noconsole --icon="path/to/dficon.ico"
+Then type: pyinstaller "path/to/df3datwork.py" --onedir --noconsole --icon="path/to/dficon.ico"
 
 Wait for pyinstaller to compile the .py script into a .exe, and the result should be in a folder called "dist" inside the folder where df3datwork.py is.
 
@@ -41,6 +41,6 @@ Open Window's CMD and type:
 
 and wait for the installation, then type:
 
-"path/to/your/python/python.exe" "path/to/your/python/Scripts/pyinstaller.exe" path/to/df3datwork.py --onedir --noconsole --icon="path/to/dficon.ico"
+"path/to/your/python/python.exe" "path/to/your/python/Scripts/pyinstaller.exe" "path/to/df3datwork.py" --onedir --noconsole --icon="path/to/dficon.ico"
 
 Wait for pyinstaller to compile into a .exe, and the result should be in a folder called "dist" inside the folder where df3datwork.py is.

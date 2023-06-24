@@ -21,9 +21,9 @@ Then you press the "Login" button, wait for the Standalone Client to open, and t
 
 You can download this from this [link](https://github.com/ils94/DF3D_at_Work/releases/download/release/df3datwork.zip)
 
-For reference, I use Python 3.8 32bits.
-
 # Compiling it yourself
+
+For reference, I use Python 3.8 32bits.
 
 Download and install Python from: https://www.python.org/downloads/
 

@@ -9,11 +9,11 @@ This program provides a simple interface for the user to save the deadfrontier.e
 # How does it works?
 Put the Executable Path and your Authentication Token in the desired input fields like in the image below:
 
-![DF3Datwork](https://i.imgur.com/f9KeG8h.png)
+![DF3Datwork](https://github.com/ils94/DF3D_at_Work/blob/main/f9KeG8h.png?raw=true)
 
 If you do not want to type the whole path to deadfrontier.exe, you can copy all the files inside the df3datwork folder into the Dead Frontier folder, and in the text input to type the Executable Path, you just type deadfrontier.exe, like in the image below:
 
-![DF3Datwork 2](https://i.imgur.com/cumOOgn.png)
+![DF3Datwork 2](https://github.com/ils94/DF3D_at_Work/blob/main/cumOOgn.png?raw=true)
 
 Then you press the "Login" button, wait for the Standalone Client to open, and then once it open, press the "Play!" button and wait for the server to authenticate you into the Inner City.
 

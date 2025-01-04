@@ -1,5 +1,5 @@
 # What is this?
-This is a small program that will make it easier to execute the command necessary to authenticate you into Dead Frontier 3D Inner City. This program also makes it super easier to authenticate your account when playing using Linux and Proton.
+This is a small program that will make it easier to execute the command necessary to authenticate you into Dead Frontier 3D Inner City. This program also makes it super easy to authenticate your account when playing using Linux and Proton.
 
 # Why you made this?
 I made this to work together with my Greasy Fork script: [Dead Frontier at work](https://greasyfork.org/en/scripts/468944-dead-frontier-at-work)

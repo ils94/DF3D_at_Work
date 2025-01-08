@@ -5,6 +5,8 @@ from tkinter import X, LEFT
 import subprocess
 import threading
 from tkinter import messagebox
+import pyperclip  # Import pyperclip for clipboard access
+
 
 def save_values():
     executable_path = path_entry.get()
@@ -15,6 +17,7 @@ def save_values():
     }
     with open('saved_values.json', 'w') as file:
         json.dump(data, file)
+
 
 def load_values():
     try:
@@ -27,21 +30,41 @@ def load_values():
     except FileNotFoundError:
         pass
 
+
+def fetch_clipboard_content():
+    try:
+        # Fetch the clipboard content and insert it into the token entry
+        clipboard_content = pyperclip.paste().strip()
+        if clipboard_content:
+            token_entry.delete(0, tk.END)  # Clear the existing content
+            token_entry.insert(0, clipboard_content)  # Insert clipboard content
+            pyperclip.copy("")
+    except Exception as e:
+        messagebox.showerror("Error", f"Failed to fetch clipboard content:\n\n{str(e)}")
+
+
 def execute_command():
     try:
         save_values()
-        executable_path = path_entry.get().replace('\"', '').replace('\n', '')  # Remove quotes and blank lines from executable path
-        authentication_token = token_entry.get().replace('\"', '').replace('\n', '')  # Remove quotes and blank lines from token
+        executable_path = path_entry.get().replace('\"', '').replace('\n',
+                                                                     '')  # Remove quotes and blank lines from executable path
+        authentication_token = token_entry.get().replace('\"', '').replace('\n',
+                                                                           '')  # Remove quotes and blank lines from token
+        if not executable_path:
+            executable_path = "deadfrontier.exe"
+
         command = [executable_path, authentication_token]
         subprocess.Popen(command)  # Launch the subprocess program
         window.destroy()  # Close the Python program
     except Exception as e:
         messagebox.showerror("Error", f"An error occurred:\n\n{str(e)}")
 
+
 def execute_command_thread():
     thread = threading.Thread(target=execute_command)
     thread.setDaemon(True)
     thread.start()
+
 
 # Create the main window
 window = tk.Tk()
@@ -75,6 +98,9 @@ token_entry.pack(fill=X, padx=5, pady=5)
 
 # Load saved values
 load_values()
+
+# Fetch clipboard content and prefill the token entry
+fetch_clipboard_content()
 
 # Create the execute button
 execute_button = tk.Button(window, text="Login", width=10, command=execute_command_thread)

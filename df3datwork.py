@@ -78,7 +78,7 @@ if os.path.exists(icon_file):
 
 # Calculate window position at the center of the screen
 window_width = 300
-window_height = 140
+window_height = 150
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
 x = (screen_width - window_width) // 2
@@ -103,7 +103,7 @@ load_values()
 fetch_clipboard_content()
 
 # Create the execute button
-execute_button = tk.Button(window, text="Login", width=10, command=execute_command_thread)
+execute_button = tk.Button(window, text="Login", width=10, height=2, command=execute_command_thread)
 execute_button.pack(side=LEFT, padx=5, pady=5)
 
 # Run the application

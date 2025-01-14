@@ -42,9 +42,10 @@ def load_values():
 def fetch_clipboard_content():
     try:
         clipboard_content = pyperclip.paste().strip()
-        if clipboard_content:
+        if clipboard_content and "token" in clipboard_content:
             token_entry.delete(0, tk.END)
-            token_entry.insert(0, clipboard_content)
+            content = clipboard_content.replace("token", "")
+            token_entry.insert(0, content)
             pyperclip.copy("")  # Clear the clipboard
     except Exception as e:
         messagebox.showerror("Error", f"Failed to fetch clipboard content:\n\n{str(e)}")

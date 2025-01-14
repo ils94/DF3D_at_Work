@@ -17,6 +17,8 @@ If you do not want to type the whole path to deadfrontier.exe, you can copy all 
 
 Then you press the "Login" button, wait for the Standalone Client to open, and then once it open, press the "Play!" button and wait for the server to authenticate you into the Inner City.
 
+You can enable Auto Login by editing the JSON file inside the root folder and setting autoLogin to "true", this will auto start the deadfrontier.exe as well as copy your token automatically.
+
 # Download
 
 You can download this from this [link](https://github.com/ils94/DF3D_at_Work/releases/download/release-v2/df3datwork.zip)
